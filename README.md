@@ -15,26 +15,16 @@ This is a simple HTTP Restful Web service built using spring boot Webflux. The c
 - Project Lombok mainly for auto-generating getter & setter
 - Gradle build tools
 
-## How to build locally
-```
-./gradlew build  # macOS/Linux
-gradlew.bat build  # Windows
-```
-
-## How to run locally
-```
-./gradlew bootRun
-```
-
 ## How to run test locally
 ```
-./gradlew test  # macOS/Linux
-gradlew.bat test  # Windows
+$ ./gradlew test  # macOS/Linux
+$ gradlew.bat test  # Windows
 ```
 
 ## How to run via Docker
 ```
-cd docker && docker compose up -d
+$ cd docker
+$ docker compose up -d
 ```
 
 ## Api Docs
