@@ -26,6 +26,12 @@ gradlew.bat build  # Windows
 ./gradlew bootRun
 ```
 
+## How to run test locally
+```
+./gradlew test  # macOS/Linux
+gradlew.bat test  # Windows
+```
+
 ## How to run via Docker
 ```
 cd docker && docker compose up -d

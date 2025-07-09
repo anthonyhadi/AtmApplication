@@ -1,6 +1,19 @@
 version: '3.8'
 
 services:
+  atm-app:
+    build: .
+    container_name: atm_app_container
+    restart: on-failure
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://root:examplepassword@mongo-db:27017/atm-db?authSource=admin
+    depends_on:
+      - mongo-db
+    networks:
+      - app-network
+
   mongo-db:
     image: mongo:latest
     container_name: mongodb_container
@@ -12,6 +25,12 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: examplepassword
     volumes:
       - mongo-data:/data/db
+    networks:
+      - app-network
 
 volumes:
   mongo-data:
+
+networks:
+  app-network:
+    driver: bridge
